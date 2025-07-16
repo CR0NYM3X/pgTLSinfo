@@ -15,7 +15,11 @@
 ### 📦 **Valores que rotorna la función**
 
 ```sql
-pgtlsinfo(TEXT)
+pgtlsinfo(
+            p_ip_server_or_certificate TEXT DEFAULT '',
+            p_port INT DEFAULT 5432,
+            p_timeout INT DEFAULT 2
+          )
 RETURNS TABLE (
   ip_server INET,
   port INT,
@@ -74,7 +78,7 @@ RETURNS TABLE (
 ### 🚀 **Uso**
 
 La función puede recibir una IP con puerto, una lista separada por comas, o una ruta a un certificado `.crt`. Si se llama sin argumentos, se intenta descubrir valores por defecto.
-
+[NOTA] -> `TIENES QUE INSTALAR TODAS LAS FUNCIONES QUE VIENE EN EL ARCHIVO "funciones.sql"`
 #### ✅ **Ejemplos de llamada**
 
 ```sql
